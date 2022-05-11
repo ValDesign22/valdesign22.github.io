@@ -1,0 +1,47 @@
+.homeMain {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    padding: 1rem 0;
+}
+
+.myDescription {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    padding: 1rem 0;
+}
+
+.skills {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-gap: 0.5rem;
+    padding: 1rem 0;
+    align-items: center;
+    text-align: center;
+    justify-items: center;
+    flex-direction: column;
+    
+    .skill {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        flex-direction: column;
+        margin: 0.5rem 0;
+    
+        .icon {
+    
+            .skillName {
+                font-size: 1.25rem;
+                font-weight: bold;
+                color: #fff;
+                height: 2rem;
+            }
+        }
+    }
+}

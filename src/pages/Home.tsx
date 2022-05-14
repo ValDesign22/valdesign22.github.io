@@ -66,6 +66,25 @@ const Home = () => {
                     </span>
                 </li>
             </ul>
+            <div className='myDescription'>
+                <h3>What I do</h3>
+                <p>I'm a french developer, I'm currently learning ReactJS. I'm currently learning how to use Docker to develop my projects.</p>
+
+                <br />
+
+                <p>I'm using github to collaborate with other programmers and manage my projects.</p>
+                <p>I'm using typescript to write my code.</p>
+                <p>I'm using mysql to store my data.</p>
+
+                <br />
+
+                <p>I'm designing using Figma and Adobe Illustrator.</p>
+
+                <br />
+
+                <a href='/projects'>See my projects</a>
+                <a href='/services'>See my services</a>
+            </div>
             <Footer />
         </div>
     );

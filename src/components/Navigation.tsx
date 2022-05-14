@@ -21,6 +21,9 @@ const Navigation = () => {
                     <NavLink to="/projects">
                         <li onClick={toggleNav}>Projects</li>
                     </NavLink>
+                    <NavLink to="/services">
+                        <li onClick={toggleNav}>Services</li>
+                    </NavLink>
                 </ul>
             </div>
         </div>

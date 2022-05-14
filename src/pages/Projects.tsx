@@ -29,24 +29,45 @@ const Projects = () => {
 
     const projectsRef = useRef(null);
 
+    const query = window.location.search;
+    const params = new URLSearchParams(query);
+    const projectQuery = params.get('project');
+    const userQuery = params.get('user');
+
+
     const getProjectFromMyGithub = async (event: any) => {
         event.preventDefault();
+
+        if (userQuery === null) return;
+        if (projectQuery === null) return;
         
         const repo = document.getElementById('repo') as HTMLInputElement;
-        const user = document.getElementById('type') as HTMLSelectElement;
+        const user = document.getElementById('type') as HTMLInputElement;
         
         let project: any = {};
-        await fetch(`https://api.github.com/repos/${user.value}/${repo.value}`)
-            .then(res => res.json())
-            .then(res => {
-                project = res;
-            }).catch(err => {
-                console.log(err);
-                project = 'Project not found';
-            });
+        const request = await fetch(`https://api.github.com/repos/${user.value || userQuery}/${repo.value || projectQuery}`)
+        project = await request.json();
+        if (project.message === 'Not Found') {
+            project = 'project-not-found';
+        }
         
-        console.log(project);
+        const resultDiv = document.getElementById('result') as HTMLDivElement;
+        resultDiv.innerHTML = project === 'project-not-found' ? `Project Not Found` : `
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">${project.name}</h5>
+                    ${project.description ? `<p class="card-text">${project.description}</p>` : ''}
+                    <a href="${project.html_url}" class="btn btn-primary">Github</a>
+                    ${project.homepage ? `<a href="${project.homepage}" class="btn btn-primary">Website</a>` : ''}
+                </div>
+            </div>
+        `;
+
+        repo.value = `${(repo.value || projectQuery) || ''}`;
+        user.value = `${userQuery || user.value}`;
     }
+
+    window.onload = getProjectFromMyGithub;
 
 
     return (
@@ -68,16 +89,17 @@ const Projects = () => {
                     <div className='search-from-github-input-container'>
                         <input type='text' placeholder='Search from Github' className='search-from-github-input' id='repo' />
 
-                        <select className='selector' id='type' name='type'>
-                            <option value='ValRedstone'>ValRedstone</option>
-                            <option value='IgeCorp'>IgeCorp</option>
-                        </select>
+                        <div className="vertical-separator"></div>
 
-                        <button type='submit'><i className='bx bx-search-alt'></i></button>
+                        <input type='text' placeholder='User' className='search-from-github-input' id='type' />
+
+                        <div className="vertical-separator"></div>
+
+                        <button type='submit' className='bx bx-search-alt search-button'></button>
                     </div>
 
                     <div className='search-from-github-results-container'>
-                        <div className='search-from-github-result'>
+                        <div className='search-from-github-result' id='result'>
                         </div>
                     </div>
                 </form>

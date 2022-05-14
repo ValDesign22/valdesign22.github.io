@@ -57,7 +57,6 @@ i {
             color: rgb(200, 200, 200);
             text-decoration: none;
             padding: 0.5rem;
-
             
             li {
                 display: inline-block;
@@ -69,11 +68,13 @@ i {
                 font-weight: bold;
                 color: #fff;
                 transition: all 0.5s ease-in-out;
+            }
 
-                &:hover {
-                    color: rgb(200, 200, 200);
-                    transform: scale(1.1);
-                }
+            &:hover {
+                color: rgb(200, 200, 200);
+                transform: scale(1.1);
+                background-color: rgba(18, 18, 18, 0.3);
+                border-radius: 0.5rem;
             }
         }
     }

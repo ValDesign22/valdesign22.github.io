@@ -18,6 +18,9 @@ const Navigation = () => {
                     <NavLink to="/">
                         <li onClick={toggleNav}>Home</li>
                     </NavLink>
+                    <NavLink to="/projects">
+                        <li onClick={toggleNav}>Projects</li>
+                    </NavLink>
                 </ul>
             </div>
         </div>

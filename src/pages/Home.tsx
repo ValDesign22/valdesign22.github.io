@@ -6,11 +6,11 @@ const Home = () => {
     return (
         <div>
             <Navigation />
-            <h1 className='homeMain'>Hey, I'm ValRedstone.</h1>
+            <h1 className='homeMain'>Hey, I'm Valentin.</h1>
             <h3 className='myDescription'>I'm a 15 year old french developer. Currently learning ReactJS.</h3>
 
             <h3 className='myDescription'>My Skills</h3>
-            <ul className='skills grid-cols-3 sm:grid-cols-4'>
+            <ul className='skills'>
                 <li className='skill'>
                     <span className='icon'>
                         <img src='https://img.icons8.com/small/24/f3f3f3/nodejs.png' alt='NodeJS' />
@@ -25,7 +25,7 @@ const Home = () => {
                 </li>
                 <li className='skill'>
                     <span className='icon'>
-                        <img src='https://img.icons8.com/small/24/f3f3f3/html-5.png' alt='HTML5' />
+                        <img src='https://img.icons8.com/material/24/f3f3f3/html-5.png' alt='HTML5' />
                         <span className='skillName'> HTML5</span>
                     </span>
                 </li>
@@ -43,7 +43,7 @@ const Home = () => {
                 </li>
                 <li className='skill'>
                     <span className='icon'>
-                        <img src='https://img.icons8.com/small/24/f3f3f3/git.png' alt='Git' />
+                        <img src='https://img.icons8.com/material/24/f3f3f3/git.png' alt='Git' />
                         <span className='skillName'> Git</span>
                     </span>
                 </li>
@@ -55,8 +55,14 @@ const Home = () => {
                 </li>
                 <li className='skill'>
                     <span className='icon'>
-                        <img src='https://img.icons8.com/small/24/f3f3f3/mysql.png' alt='MySQL' />
+                        <img src='https://img.icons8.com/material/24/f3f3f3/mysql.png' alt='MySQL' />
                         <span className='skillName'> MySQL</span>
+                    </span>
+                </li>
+                <li className='skill'>
+                    <span className='icon'>
+                        <img src='https://img.icons8.com/material/24/f3f3f3/docker.png' alt='Docker' />
+                        <span className='skillName'> Docker</span>
                     </span>
                 </li>
             </ul>

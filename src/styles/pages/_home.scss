@@ -4,6 +4,15 @@
     align-items: center;
     text-align: center;
     flex-direction: column;
+    margin-top: 3rem;
+}
+
+.mainDesc, .mainTitle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
     padding: 1rem 0;
 }
 
@@ -14,6 +23,7 @@
     text-align: center;
     flex-direction: column;
     padding: 1rem 0;
+    margin-bottom: 8rem;
 }
 
 .skills {

@@ -1,27 +1,26 @@
-import React from 'react';
 import { NavLink } from 'react-router-dom';
+import HamburgerMenu from './HamburgerMenu';
 
 const Navigation = () => {
     const toggleNav = () => {
         const nav = document.getElementById('navigation');
-        const btnOpen = document.getElementById('btn-open');
+        const menuInput = document.getElementById('menuInput') as HTMLInputElement;
         nav?.classList.toggle('is-open');
-        btnOpen?.classList.toggle('is-open');
+        menuInput.checked = !menuInput.checked;
     }
 
     return (
         <div>
-            <i className='bx bx-menu navigation-button' id="btn-open" onClick={toggleNav}></i>
+            <HamburgerMenu />
             <div className='navigation' id="navigation">
-                <i className='bx bx-x navigation-close' onClick={toggleNav}></i>
                 <ul>
-                    <NavLink to="/">
+                    <NavLink to="/" className={nav => nav.isActive ? "isActive" : ""}>
                         <li onClick={toggleNav}>Home</li>
                     </NavLink>
-                    <NavLink to="/projects">
+                    <NavLink to="/projects" className={nav => nav.isActive ? "isActive" : ""}>
                         <li onClick={toggleNav}>Projects</li>
                     </NavLink>
-                    <NavLink to="/services">
+                    <NavLink to="/services" className={nav => nav.isActive ? "isActive" : ""}>
                         <li onClick={toggleNav}>Services</li>
                     </NavLink>
                 </ul>

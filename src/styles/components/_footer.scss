@@ -5,7 +5,8 @@
     color: #666;
     bottom: 0;
     width: 100%;
-    z-index: -1;
+    position: fixed;
+    background-color: $black;
 
     .footer-container {
         display: flex;
@@ -36,17 +37,5 @@
             font-size: 0.8rem;
             color: #666;
         }
-    }
-}
-
-@media (min-width: 700px) {
-    .footer {
-        padding: 1rem 0;
-        text-align: center;
-        position: fixed;
-        font-size: 0.8rem;
-        color: #666;
-        bottom: 0;
-        width: 100%;
     }
 }

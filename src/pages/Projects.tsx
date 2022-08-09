@@ -1,51 +1,36 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
-import React, { useRef } from 'react';
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
 import Project from '../components/Project';
+import { useRef } from 'react';
 
 const Projects = () => {
     const projects = [
         {
-            title: 'IgeMail',
-            description: 'IgeMail is a modmail discord bot with a dashboard',
-            image: 'https://i.imgur.com/XqQXqQZ.png',
-            github: 'https://github.com/IgeCorp',
-            website: 'https://mail.igecorp.xyz'
-        }, {
             title: 'ige-djs',
             description: 'A npm module that allows you to easily create a discord bot',
             image: 'https://i.imgur.com/XqQXqQZ.png',
             github: 'https://github.com/IgeCorp/ige-djs',
             website: 'https://igecorp.js.org'
         }, {
-            title: 'Esprit de meute (not finished)',
+            title: 'Esprit de meute',
             description: 'Esprit de meute is a website made with react for one of my clients',
-            image: 'https://i.imgur.com/XqQXqQZ.png',
+            image: require("../assets/img/esprit-de-meute.png"),
             github: 'https://github.com/ValRedstone/esprit-de-meute',
-            website: 'https://valredstone.github.io/esprit-de-meute'
+            website: 'https://esprit-de-meute.vercel.app'
         }
     ];
 
     const projectsRef = useRef(null);
 
-    const query = window.location.search;
-    const params = new URLSearchParams(query);
-    const projectQuery = params.get('project');
-    const userQuery = params.get('user');
-
-
     const getProjectFromMyGithub = async (event: any) => {
         event.preventDefault();
 
-        if (userQuery === null) return;
-        if (projectQuery === null) return;
         
+        const user = document.getElementById('user') as HTMLInputElement;
         const repo = document.getElementById('repo') as HTMLInputElement;
-        const user = document.getElementById('type') as HTMLInputElement;
         
         let project: any = {};
-        const request = await fetch(`https://api.github.com/repos/${user.value || userQuery}/${repo.value || projectQuery}`)
+        const request = await fetch(`https://api.github.com/repos/${user.value}/${repo.value}`)
         project = await request.json();
         if (project.message === 'Not Found') {
             project = 'project-not-found';
@@ -63,12 +48,9 @@ const Projects = () => {
             </div>
         `;
 
-        repo.value = `${(repo.value || projectQuery) || ''}`;
-        user.value = `${userQuery || user.value}`;
+        repo.value = `${repo.value}`;
+        user.value = `${user.value}`;
     }
-
-    window.onload = getProjectFromMyGithub;
-
 
     return (
         <div>
@@ -87,11 +69,11 @@ const Projects = () => {
                     <h1>Search from Github</h1>
 
                     <div className='search-from-github-input-container'>
-                        <input type='text' placeholder='Search from Github' className='search-from-github-input' id='repo' />
+                        <input type='text' placeholder='User' className='search-from-github-input' id='user' />
 
                         <div className="vertical-separator"></div>
 
-                        <input type='text' placeholder='User' className='search-from-github-input' id='type' />
+                        <input type='text' placeholder='Project' className='search-from-github-input' id='repo' />
 
                         <div className="vertical-separator"></div>
 
@@ -99,8 +81,7 @@ const Projects = () => {
                     </div>
 
                     <div className='search-from-github-results-container'>
-                        <div className='search-from-github-result' id='result'>
-                        </div>
+                        <div className='search-from-github-result' id='result'></div>
                     </div>
                 </form>
             </div>

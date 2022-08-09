@@ -1,4 +1,3 @@
-import React from 'react';
 import Footer from '../components/Footer';
 import Navigation from '../components/Navigation';
 
@@ -7,9 +6,9 @@ const Home = () => {
         <div>
             <Navigation />
             <h1 className='homeMain'>Hey, I'm Valentin.</h1>
-            <h3 className='myDescription'>I'm a 15 year old french developer. Currently learning ReactJS.</h3>
+            <h3 className='mainDesc'>I'm a 15 year old french developer. Currently learning ReactJS.</h3>
 
-            <h3 className='myDescription'>My Skills</h3>
+            <h3 className='mainTitle'>My Skills</h3>
             <ul className='skills'>
                 <li className='skill'>
                     <span className='icon'>

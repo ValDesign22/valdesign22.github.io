@@ -1,5 +1,7 @@
 import Footer from '../components/Footer';
 import Navigation from '../components/Navigation';
+import { FaCss3, FaHtml5, FaNodeJs, FaReact, FaJs, FaGitAlt, FaDocker } from "react-icons/fa";
+import { SiMysql, SiTypescript } from "react-icons/si";
 
 const Home = () => {
     return (
@@ -12,55 +14,55 @@ const Home = () => {
             <ul className='skills'>
                 <li className='skill'>
                     <span className='icon'>
-                        <img src='https://img.icons8.com/small/24/f3f3f3/nodejs.png' alt='NodeJS' />
+                        <FaNodeJs />
                         <span className='skillName'> NodeJS</span>
                     </span>
                 </li>
                 <li className='skill'>
                     <span className='icon'>
-                        <img src='https://img.icons8.com/small/24/f3f3f3/react.png' alt='ReactJS' />
+                        <FaReact />
                         <span className='skillName'> ReactJS</span>
                     </span>
                 </li>
                 <li className='skill'>
                     <span className='icon'>
-                        <img src='https://img.icons8.com/material/24/f3f3f3/html-5.png' alt='HTML5' />
+                        <FaHtml5 />
                         <span className='skillName'> HTML5</span>
                     </span>
                 </li>
                 <li className='skill'>
                     <span className='icon'>
-                        <img src='https://img.icons8.com/material/24/f3f3f3/css3.png' alt='CSS3' />
+                        <FaCss3 />
                         <span className='skillName'> CSS3</span>
                     </span>
                 </li>
                 <li className='skill'>
                     <span className='icon'>
-                        <img src='https://img.icons8.com/small/24/f3f3f3/js.png' alt='JavaScript' />
+                        <FaJs />
                         <span className='skillName'> JavaScript</span>
                     </span>
                 </li>
                 <li className='skill'>
                     <span className='icon'>
-                        <img src='https://img.icons8.com/material/24/f3f3f3/git.png' alt='Git' />
+                        <FaGitAlt />
                         <span className='skillName'> Git</span>
                     </span>
                 </li>
                 <li className='skill'>
                     <span className='icon'>
-                        <img src='https://img.icons8.com/material/24/f3f3f3/typescript.png' alt='Typescript' />
+                        <SiTypescript />
                         <span className='skillName'> Typescript</span>
                     </span>
                 </li>
                 <li className='skill'>
                     <span className='icon'>
-                        <img src='https://img.icons8.com/material/24/f3f3f3/mysql.png' alt='MySQL' />
+                        <SiMysql />
                         <span className='skillName'> MySQL</span>
                     </span>
                 </li>
                 <li className='skill'>
                     <span className='icon'>
-                        <img src='https://img.icons8.com/material/24/f3f3f3/docker.png' alt='Docker' />
+                        <FaDocker />
                         <span className='skillName'> Docker</span>
                     </span>
                 </li>

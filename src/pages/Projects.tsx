@@ -15,8 +15,8 @@ const Projects = () => {
             title: 'Esprit de meute',
             description: 'Esprit de meute is a website made with react for one of my clients',
             image: require("../assets/img/esprit-de-meute.png"),
-            github: 'https://github.com/ValRedstone/esprit-de-meute',
-            website: 'https://esprit-de-meute.vercel.app'
+            github: 'https://espritdemeute.fr',
+            website: 'https://espritdemeute.fr'
         }
     ];
 

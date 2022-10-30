@@ -30,9 +30,9 @@ i {
     left: 0;
     z-index: 100;
     transition: all 0.3s ease-in-out;
-    transform: translateX(200%);
+    transform: translateX(100%) translateY(100%);
     &.is-open {
-        transform: translateX(0);
+        transform: translateX(0) translateY(0);
     }
 
     ul {

@@ -1,0 +1,134 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+
+  .left {
+    display: flex;
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: $white;
+      text-decoration: none;
+    }
+  }
+
+  .right {
+    display: flex;
+    align-items: center;
+    position: relative;
+
+    .links {
+      display: flex;
+      align-items: center;
+      list-style: none;
+      margin-right: 2rem;
+      transition: all 0.3s ease;
+      transform: translateX(0);
+
+      @media screen and (max-width: 768px) {
+        position: absolute;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+
+        &:not(.open) {
+          display: flex;
+          transform: translateX(100%);
+
+          .link {
+            display: none;
+          }
+        }
+
+        &.open {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          top: 4rem;
+          right: 0;
+          background-color: rgba(0, 0, 0, 0.5);
+          width: calc(100vw - 6rem);
+          height: calc(100vh - 12rem);
+          z-index: 1;
+          border-radius: 1rem;
+
+          .link {
+            margin: 1rem 0;
+            font-size: 1.5rem;
+            font-weight: 500;
+            color: $white;
+            text-decoration: none;
+            text-align: center;
+          }
+        }
+      }
+
+      .link {
+        margin: 0 1rem;
+        font-size: 1rem;
+        font-weight: 500;
+        color: $white;
+        text-decoration: none;
+        position: relative;
+
+        span {
+          position: absolute;
+          bottom: -5px;
+          left: 0;
+          width: 0;
+          height: 2px;
+          background-color: $white;
+          transition: all 0.2s ease-in-out;
+          border-radius: 5px;
+        }
+
+        &:hover {
+          span {
+            width: 100%;
+          }
+        }
+      }
+    }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      justify-content: space-around;
+      width: 2rem;
+      height: 2rem;
+
+      @media (max-width: 768px) {
+        display: flex;
+      }
+
+      span {
+        display: block;
+        width: 25px;
+        height: 3px;
+        border-radius: 10px;
+        background: $white;
+        margin: 2px;
+        transition: all 0.3s ease-in-out;
+      }
+
+      &.open {
+        span:nth-child(1) {
+          transform: rotate(-45deg) translate(-5px, 6px);
+        }
+
+        span:nth-child(2) {
+          opacity: 0;
+        }
+
+        span:nth-child(3) {
+          transform: rotate(45deg) translate(-5px, -6px);
+        }
+      }
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+}

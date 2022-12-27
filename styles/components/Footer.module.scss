@@ -1,0 +1,47 @@
+footer {
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 1rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: $white;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  width: 100vw;
+
+  .socials {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0.5rem 0.5rem 0.5rem auto;
+
+    .social {
+      margin: 0 1rem;
+      font-size: 1.5rem;
+      color: $white;
+      text-decoration: none;
+
+      a {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        color: $white;
+        text-decoration: none;
+        position: relative;
+
+        svg {
+          transition: all 0.2s ease-in-out;
+        }
+
+        &:hover {
+          svg {
+            scale: 1.1;
+          }
+        }
+      }
+    }
+  }
+}

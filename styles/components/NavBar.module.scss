@@ -28,7 +28,7 @@
       transform: translateX(0);
 
       @media screen and (max-width: 768px) {
-        position: absolute;
+        position: fixed;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 
         &:not(.open) {

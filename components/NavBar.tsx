@@ -21,13 +21,19 @@ export default function NavBar() {
                 <ul className={`links ${isOpen ? "open" : ""}`}>
                     <li className="link">
                         <Link href="/">
-                            <p>Home</p>
+                            <p>Accueil</p>
                             <span></span>
                         </Link>
                     </li>
                     <li className="link">
-                        <Link href="/about">
-                            <p>About</p>
+                        <Link href="/projects">
+                            <p>Projets</p>
+                            <span></span>
+                        </Link>
+                    </li>
+                    <li className="link">
+                        <Link href="/contact">
+                            <p>Contact</p>
                             <span></span>
                         </Link>
                     </li>

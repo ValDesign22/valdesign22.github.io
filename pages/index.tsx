@@ -13,12 +13,10 @@ export default function Home() {
       <main>
         <NavBar />
         <section className="me">
-          <h1>Hey, my name is Valentin.</h1>
-          <h2>I&apos;m a 15 year old french web developer.</h2>
+          <h1>Salut, moi c&apos;est Valentin</h1>
+          <h2>Je suis un développeur web</h2>
 
-          <p>
-            I&apos;m currently working on a lot of projects, like this website, a discord bot, a minecraft server, and more.
-          </p>
+          <p>Je suis actuellement en train de travailler sur beaucoup de projets, comme ce site web, un mod minecraft, et plus encore.</p>
         </section>
       </main>
     </>

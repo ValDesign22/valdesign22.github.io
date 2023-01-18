@@ -7,7 +7,7 @@
     display: flex;
 
     .logo {
-      font-size: 1.5rem;
+      font-size: 2rem;
       font-weight: 700;
       color: $white;
       text-decoration: none;
@@ -28,7 +28,7 @@
       transform: translateX(0);
 
       @media screen and (max-width: 768px) {
-        position: absolute;
+        position: fixed;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 
         &:not(.open) {
@@ -55,7 +55,7 @@
 
           .link {
             margin: 1rem 0;
-            font-size: 1.5rem;
+            font-size: 2rem;
             font-weight: 500;
             color: $white;
             text-decoration: none;
@@ -66,7 +66,7 @@
 
       .link {
         margin: 0 1rem;
-        font-size: 1rem;
+        font-size: 1.5rem;
         font-weight: 500;
         color: $white;
         text-decoration: none;

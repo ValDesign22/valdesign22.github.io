@@ -1,9 +1,12 @@
-$main: rgb(9,9,121);
+$main: rgb(29, 29, 197);
 $main-light: rgb(0,106,255);
-$main-dark: rgb(2,2,51);
+$main-dark: rgb(7, 0, 121);
 
 $white: rgb(240,240,240);
 $black: rgb(40,40,40);
+
+$link: rgb(230, 230, 230);
+$link-hover: rgb(169, 169, 243);
 
 * {
   box-sizing: border-box;
@@ -18,15 +21,40 @@ body {
   max-width: 100vw;
   height: 100%;
   overflow-x: hidden;
-  background: linear-gradient(45deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,106,255,1) 100%);
+  background: linear-gradient(45deg, rgb(7, 0, 121) 0%, rgb(29, 29, 197) 35%, rgba(0,106,255,1) 100%);
+  background-size: 200% 200%;
+
+  -webkit-animation: BackgroundAnimation 30s ease infinite;
+  -moz-animation: BackgroundAnimation 30s ease infinite;
+  animation: BackgroundAnimation 30s ease infinite;
+
+  @-webkit-keyframes BackgroundAnimation {
+    0%{background-position:0% 90%}
+    50%{background-position:100% 11%}
+    100%{background-position:0% 90%}
+  }
+  @-moz-keyframes BackgroundAnimation {
+    0%{background-position:0% 90%}
+    50%{background-position:100% 11%}
+    100%{background-position:0% 90%}
+  }
+  @keyframes BackgroundAnimation {
+    0%{background-position:0% 90%}
+    50%{background-position:100% 11%}
+    100%{background-position:0% 90%}
+  }
 }
 
 a {
-  color: inherit;
   text-decoration: none;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+  color: $link;
+  position: relative;
 }
 
 @import "./components/Footer.module.scss";
 @import "./components/NavBar.module.scss";
 
-@import "styles/pages/Home.module.scss";
+@import "./pages/Contact.module.scss";
+@import "./pages/Home.module.scss";

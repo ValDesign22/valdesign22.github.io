@@ -9,11 +9,13 @@ export default function Footer() {
                 <div className="social">
                     <Link href={"https://github.com/ValDesign22"} target="_blank">
                         <BsGithub />
+                        <span className="tooltip">Github</span>
                     </Link>
                 </div>
                 <div className="social">
                     <Link href={"mailto:valdesign.dev@gmail.com"} target="_blank">
                         <SiGmail />
+                        <span className="tooltip">Email</span>
                     </Link>
                 </div>
             </div>

@@ -2,6 +2,33 @@ import NavBar from "../components/NavBar";
 import Head from "next/head";
 
 export default function Contact() {
+  const handleContact = (e: any) => {
+    e.preventDefault();
+
+    const name = e.target.name.value;
+    const email = e.target.email.value;
+    const phone = e.target.phone.phone;
+    const subject = e.target.subject.value;
+    const message = e.target.message.value;
+
+    return alert(`Name: ${name} Email: ${email} Phone: ${phone} Subject: ${subject} Message: ${message}`);
+
+    fetch("/api/contact", {
+      method: "POST",
+      body: JSON.stringify({
+        name,
+        email,
+        phone,
+        subject,
+        message
+      })
+    })
+    .then(res => res.json())
+    .then(data => {
+      console.log(data);
+    });
+  }
+
   return (
     <>
       <Head>
@@ -21,31 +48,31 @@ export default function Contact() {
           <div className="form">
             <h2>Formulaire de contact</h2>
 
-            <form>
+            <form onSubmit={handleContact}>
               <div className="up-part">
                 <div className="input">
                   <label htmlFor="name">Nom<span className="required">*</span></label>
-                  <input type="text" name="name" id="name" required />
+                  <input type="text" name="name" id="name" pattern="^[A-Za-z- ]+ [A-Za-z- ]+$" title="Veuillez entrer votre nom et prénom valides" required />
                 </div>
                 <div className="input">
                   <label htmlFor="email">Email<span className="required">*</span></label>
                   <input type="email" name="email" id="email" required />
                 </div>
                 <div className="input">
-                  <label htmlFor="subject">Téléphone</label>
-                  <input type="tel" name="tel" id="tel" />
+                  <label htmlFor="phone">Téléphone</label>
+                  <input type="tel" name="phone" id="phone" />
                 </div>
               </div>
               <div className="middle-part">
                 <div className="input">
                   <label htmlFor="subject">Sujet<span className="required">*</span></label>
-                  <input type="text" name="subject" id="subject" required />
+                  <input type="text" name="subject" id="subject" minLength={5} required />
                 </div>
               </div>
               <div className="down-part">
                 <div className="input">
                   <label htmlFor="message">Message<span className="required">*</span></label>
-                  <textarea name="message" id="message" cols={30} rows={5} required />
+                  <textarea name="message" id="message" cols={30} rows={5} minLength={10} required></textarea>
 
                 </div>
               </div>

@@ -36,9 +36,40 @@ footer {
           transition: all 0.2s ease-in-out;
         }
 
+        .tooltip {
+          display: none;
+          position: absolute;
+          bottom: calc(100% + 5px);
+          left: 50%;
+          transform: translateX(-50%);
+          background: rgba(0, 0, 0, 0.6);
+          color: $white;
+          padding: 0.5rem;
+          border-radius: 5px;
+          font-size: 1rem;
+          font-weight: 600;
+          z-index: 100;
+          white-space: nowrap;
+          transition: all 0.3s ease-in-out;
+
+          &::after {
+            content: "";
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            border: 5px solid transparent;
+            border-top-color: rgba(0, 0, 0, 0.6);
+          }
+        }
+
         &:hover {
           svg {
             scale: 1.1;
+          }
+
+          .tooltip {
+            display: block;
           }
         }
       }

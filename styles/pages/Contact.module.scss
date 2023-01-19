@@ -6,6 +6,7 @@
   height: 100%;
   width: 100%;
   padding: 0 1rem;
+  margin-bottom: 5rem;
 
   h1 {
     font-size: 3rem;
@@ -117,6 +118,8 @@
           textarea {
             width: 100%;
             max-width: 500px;
+            min-width: 500px;
+            min-height: 3.5rem;
             font-size: 1.5rem;
             padding: 0.5rem;
             border: none;
@@ -126,7 +129,6 @@
             transition: border-radius 0.3s ease-in-out,
                 background 0.3s ease-in-out,
                 border-bottom 0.3s ease-in-out;
-            min-height: 4rem;
 
             &:focus {
               outline: none;

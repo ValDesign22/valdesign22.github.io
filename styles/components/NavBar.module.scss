@@ -105,11 +105,12 @@
 
       @media (max-width: 768px) {
         display: flex;
+      }
 
-        // reduce the space between the hamburger lines
-        span {
-          margin: 1px;
-        }
+      @media (max-width: 400px) {
+        display: flex;
+        height: 1.5rem;
+        width: 1.5rem;
       }
 
       span {

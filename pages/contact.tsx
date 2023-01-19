@@ -16,6 +16,7 @@ export default function Contact() {
           <h1>Contact</h1>
 
           <p>Vous pouvez me contacter par mail à l&apos;adresse suivante: <a href="mailto:valdesign.dev@gmail.com" target="_blank" rel="noreferrer">valdesign.dev@gmail.com</a></p>
+          <p>Ou par le formulaire de contact ci-dessous:</p>
 
           <div className="form">
             <h2>Formulaire de contact</h2>
@@ -47,6 +48,9 @@ export default function Contact() {
                   <textarea name="message" id="message" cols={30} rows={5} required />
 
                 </div>
+              </div>
+              <div className="submit">
+                <button type="submit">Envoyer</button>
               </div>
             </form>
           </div>

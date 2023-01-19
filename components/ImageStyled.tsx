@@ -13,5 +13,5 @@ export default function ImageStyled(props: { src: string, alt: string, className
         }
     }, [props.id]);
 
-    return <Image src={props.src} alt={props.alt} className={`image ${props.className || ""} ${loaded ? "" : "skeleton"}`} id={props.id} draggable={false} width={1000} height={1000} />
+    return <img src={props.src} alt={props.alt} className={`image ${props.className || ""} ${loaded ? "" : "skeleton"}`} id={props.id} draggable={false} />
 }

@@ -49,7 +49,7 @@
           right: 0;
           background-color: rgba(0, 0, 0, 0.5);
           width: calc(100vw - 6rem);
-          height: calc(100vh - 12rem);
+          height: auto;
           z-index: 1;
           border-radius: 1rem;
 
@@ -72,19 +72,21 @@
         text-decoration: none;
         position: relative;
 
-        span {
-          position: absolute;
-          bottom: -5px;
-          left: 0;
+        &::after {
+          content: "";
+          display: block;
           width: 0;
           height: 2px;
-          background-color: $white;
+          background: $link;
           transition: all 0.2s ease-in-out;
-          border-radius: 5px;
+          position: absolute;
+          bottom: -0.2rem;
+          left: 0;
+          border-radius: 0.5rem;
         }
 
         &:hover {
-          span {
+          &::after {
             width: 100%;
           }
         }
@@ -100,6 +102,11 @@
 
       @media (max-width: 768px) {
         display: flex;
+
+        // reduce the space between the hamburger lines
+        span {
+          margin: 1px;
+        }
       }
 
       span {

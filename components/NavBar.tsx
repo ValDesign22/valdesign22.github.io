@@ -22,19 +22,16 @@ export default function NavBar() {
                     <li className="link">
                         <Link href="/">
                             <p>Accueil</p>
-                            <span></span>
                         </Link>
                     </li>
                     <li className="link">
                         <Link href="/projects">
                             <p>Projets</p>
-                            <span></span>
                         </Link>
                     </li>
                     <li className="link">
                         <Link href="/contact">
                             <p>Contact</p>
-                            <span></span>
                         </Link>
                     </li>
                 </ul>

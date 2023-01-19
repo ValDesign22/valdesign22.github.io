@@ -31,19 +31,19 @@ body {
   animation: BackgroundAnimation 30s ease infinite;
 
   @-webkit-keyframes BackgroundAnimation {
-    0%{background-position:0% 90%}
+    0%{background-position:0 90%}
     50%{background-position:100% 11%}
-    100%{background-position:0% 90%}
+    100%{background-position:0 90%}
   }
   @-moz-keyframes BackgroundAnimation {
-    0%{background-position:0% 90%}
+    0%{background-position:0 90%}
     50%{background-position:100% 11%}
-    100%{background-position:0% 90%}
+    100%{background-position:0 90%}
   }
   @keyframes BackgroundAnimation {
-    0%{background-position:0% 90%}
+    0%{background-position:0 90%}
     50%{background-position:100% 11%}
-    100%{background-position:0% 90%}
+    100%{background-position:0 90%}
   }
 }
 
@@ -60,3 +60,4 @@ a {
 
 @import "./pages/Contact.module.scss";
 @import "./pages/Home.module.scss";
+@import "./pages/Projects.module.scss";

@@ -1,15 +1,11 @@
 import Head from 'next/head';
 import NavBar from "../components/NavBar";
 import ImageStyled from "../components/ImageStyled";
-import {
-  SiTypescript,
-  IoLogoReact,
-  IoLogoSass,
-  AiFillGithub,
-  AiOutlineLink,
-  TbBrandNextjs,
-  IoLogoPython
-} from "react-icons/all";
+
+import {SiTypescript, SiReact} from "react-icons/si";
+import {IoLogoSass, IoLogoPython} from "react-icons/io";
+import {AiFillGithub, AiOutlineLink} from "react-icons/ai";
+import {TbBrandNextjs} from "react-icons/tb";
 
 export default function Projects() {
   const projects = [
@@ -90,7 +86,7 @@ export default function Projects() {
                           <span className="tooltip">SCSS</span>
                       </span>}
                         {tech === "React" && <span key={index}>
-                          <IoLogoReact />
+                          <SiReact />
                           <span className="tooltip">React</span>
                       </span>}
                         {tech === "TypeScript" && <span key={index}>

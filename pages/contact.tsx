@@ -11,22 +11,24 @@ export default function Contact() {
     const subject = e.target.subject.value;
     const message = e.target.message.value;
 
-    return alert(`Name: ${name} Email: ${email} Phone: ${phone} Subject: ${subject} Message: ${message}`);
-
     fetch("/api/contact", {
       method: "POST",
       body: JSON.stringify({
-        name,
-        email,
-        phone,
-        subject,
-        message
+        name: name,
+        email: email,
+        phone: phone,
+        subject: subject,
+        message: message
       })
     })
-    .then(res => res.json())
-    .then(data => {
-      console.log(data);
-    });
+      .then(res => res.json())
+      .then(data => {
+        if (data.message === "Email sent successfully") {
+          alert("Message envoyé avec succès!");
+          e.target.reset();
+        }
+        else alert("Erreur lors de l'envoi du message");
+      });
   }
 
   return (

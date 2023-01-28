@@ -8,7 +8,13 @@ export default function App({ Component, pageProps }: AppProps) {
     <>
       <Component {...pageProps} />
       <Footer />
-      <Analytics mode={'production'} />
+      <Analytics
+        mode={'production'}
+        beforeSend={event => {
+          if (event.url.includes('/api')) return null;
+          return event;
+        }}
+      />
     </>
   )
 }

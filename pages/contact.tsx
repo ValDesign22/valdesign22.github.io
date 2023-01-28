@@ -1,5 +1,4 @@
 import NavBar from "../components/NavBar";
-import Head from "next/head";
 
 export default function Contact() {
   const handleContact = (e: any) => {
@@ -33,12 +32,6 @@ export default function Contact() {
 
   return (
     <>
-      <Head>
-        <title>ValDesign - Contact</title>
-        <meta name="description" content="This is my portfolio website" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
       <main>
         <NavBar />
         <section className="contact">

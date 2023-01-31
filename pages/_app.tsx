@@ -26,7 +26,9 @@ export default function App({ Component, pageProps }: AppProps) {
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
 
         <link rel="manifest" href="/site.webmanifest" />
-        <meta name="robots" content="index, follow" />
+        <meta name="robots" content="noindex, nofollow" />
+
+        <meta name="google-site-verification" content={process.env.GOOGLE_SITE_VERIFICATION} />
       </Head>
       <Component {...pageProps} />
       <Footer />

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import {useState} from "react";
+import ImageStyled from "./ImageStyled";
 
 export default function NavBar() {
     const [isOpen, setIsOpen] = useState(false);
@@ -8,7 +9,7 @@ export default function NavBar() {
         <nav className="navbar">
             <div className="left">
                 <Link href="/">
-                    <p className="logo">ValDesign</p>
+                    <p className="logo"><ImageStyled src={"/android-chrome-512x512.png"} alt={"Logo"} id={"logo-valdesign"} /> ValDesign</p>
                 </Link>
             </div>
             <div className="right">

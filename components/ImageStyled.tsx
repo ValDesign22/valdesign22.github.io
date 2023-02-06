@@ -1,4 +1,3 @@
-import Image from "next/image";
 import {useEffect, useState} from "react";
 
 export default function ImageStyled(props: { src: string, alt: string, className?: string, id?: string }) {

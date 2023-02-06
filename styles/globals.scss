@@ -55,9 +55,29 @@ a {
   position: relative;
 }
 
+// Temporary removed the skeleton loading animation
+/*
+img.skeleton {
+  background-image: linear-gradient(90deg, #eee 4%, #eee 40%, #ddd 50%, #ddd 55%, #eee 65%, #eee 100%);
+  background-size: 100% 100%;
+  animation: skeleton 1.2s infinite;
+
+  @keyframes skeleton {
+    from {
+      background-position: 100%;
+    }
+
+    to {
+      background-position: 0;
+    }
+  }
+}
+*/
+
 @import "./components/Footer.module.scss";
 @import "./components/NavBar.module.scss";
 
 @import "./pages/Contact.module.scss";
 @import "./pages/Home.module.scss";
 @import "./pages/Projects.module.scss";
+

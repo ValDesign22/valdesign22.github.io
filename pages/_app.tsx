@@ -15,7 +15,7 @@ export default function App({ Component, pageProps }: AppProps) {
 
         <meta property="og:title" content="ValDesign" />
         <meta property="og:description" content="Portfolio de ValDesign, développeur web, proposition de services" />
-        <meta property="og:image" content="https://valdesign.me/adroid-chrome-512x512.png" />
+        <meta property="og:image" content="https://valdesign.me/android-chrome-512x512.png" />
         <meta property="og:url" content="https://valdesign.me" />
         <meta property="og:type" content="website" />
 

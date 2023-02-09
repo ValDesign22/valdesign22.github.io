@@ -1,0 +1,28 @@
+[
+    {
+        "name": "ValDesign",
+        "image": "/images/valdesign-portfolio.png",
+        "repo": "https://github.com/ValDesign22/valdesign22.github.io",
+        "url": "https://valdesign.me",
+        "description": "Ceci est mon site web personnel.\nJ'ai créé ce site web pour présenter mes projets et mes compétences.",
+        "tech": ["Next.js", "SCSS", "React", "TypeScript"]
+    }, {
+        "name": "YopBotList",
+        "image": "/images/yopbotlist.png",
+        "repo": "https://github.com/Yop-BotList/YopBotList",
+        "url": "https://yopbotlist.me",
+        "description": "YopBotList est une liste de bots discord.\nJ'ai créé ce site web afin de faire découvrir des bots discord.",
+        "tech": ["Next.js", "SCSS", "React", "TypeScript"]
+    }, {
+        "name": "Esprit de Meute",
+        "image": "/images/espritdemeute.png",
+        "url": "https://espritdemeute.fr",
+        "description": "Esprit de Meute est un site web que j'ai créé pour une association d'éducation canine.\nJ'ai créé ce site web afin de présenter l'association et ses activités.\nC'est aussi le premier site web que j'ai créé.",
+        "tech": ["SCSS", "React", "TypeScript"]
+    }, {
+        "name": "Rubik's Cube Solver",
+        "repo": "https://github.com/ValDesign22/Rubik-s-Solver",
+        "description": "Rubik's Cube Solver est un programme qui permet de résoudre un Rubik's Cube.\nJ'ai créé ce programme afin de résoudre un Rubik's Cube en utilisant les Lego Mindstorms.",
+        "tech": ["Python"]
+    }
+]

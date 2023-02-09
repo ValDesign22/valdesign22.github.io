@@ -4,16 +4,142 @@
   align-items: center;
   justify-content: center;
   padding: 0 1rem;
+  text-align: center;
 
   h1 {
-    font-size: 2rem;
+    margin: 0;
+    line-height: 1.15;
+    font-size: 4rem;
   }
 
   h2 {
+    margin: 0;
+    line-height: 1.15;
     font-size: 1.5rem;
   }
 
   p {
+    line-height: 1.5;
+    font-size: 1.25rem;
+  }
+}
+
+.whoami {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0 1rem;
+  text-align: center;
+
+  h2 {
+    margin: 0;
+    line-height: 1.15;
     font-size: 1.5rem;
+  }
+
+  p {
+    line-height: 1.5;
+    font-size: 1.25rem;
+
+    a {
+      margin-bottom: 1rem;
+  
+      &::after {
+        content: "";
+        display: block;
+        width: 0;
+        height: 2px;
+        background: $link;
+        transition: all 0.3s;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        border-radius: 5px;
+      }
+  
+      &:hover {
+        color: $link-hover;
+  
+        &::after {
+          background: $link-hover;
+          width: 100%;
+          transition: all 0.3s;
+        }
+      }
+    }
+  }
+}
+
+.how {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0 1rem;
+  text-align: center;
+
+  h2 {
+    margin: 0;
+    line-height: 1.15;
+    font-size: 1.5rem;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    li {
+      margin: 0;
+      line-height: 1.15;
+      font-size: 1.25rem;
+      margin-bottom: 1rem;
+    }
+  }
+}
+
+.contact-cta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0 1rem;
+  text-align: center;
+
+  p {
+    line-height: 1.5;
+    font-size: 1.25rem;
+  }
+
+  a {
+    margin-bottom: 1rem;
+
+    &::after {
+      content: "";
+      display: block;
+      width: 0;
+      height: 2px;
+      background: $link;
+      transition: all 0.3s;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      border-radius: 5px;
+    }
+
+    &:hover {
+      color: $link-hover;
+
+      &::after {
+        background: $link-hover;
+        width: 100%;
+        transition: all 0.3s;
+      }
+    }
   }
 }

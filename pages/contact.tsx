@@ -1,32 +1,79 @@
 import NavBar from "../components/NavBar";
 
 export default function Contact() {
+  const createToast = (props: { type: string; }) => {
+    const toast = document.createElement("div");
+    toast.classList.add("toast");
+    toast.id = `toast-${Date.now()}`;
+  
+    let hovering = false;
+    let currentTimeout = 5500;
+    let remainingTimeout = currentTimeout;
+    let interval = 100;
+  
+    const p = document.createElement("p");
+    p.textContent = props.type === "success" ? "Message envoyé avec succès!" : "Erreur lors de l'envoi du message";
+    toast.appendChild(p);
+  
+    const button = document.createElement("button");
+    button.classList.add("close-toast");
+    button.textContent = "X";
+  
+    button.addEventListener("click", () => toast.remove());
+  
+    toast.appendChild(button);
+  
+    const toastBar = document.createElement("span");
+    toastBar.classList.add("toast-bar");
+    toast.appendChild(toastBar);
+  
+    toast.addEventListener("mouseenter", () => {
+      hovering = true;
+    });
+  
+    toast.addEventListener("mouseleave", () => {
+      hovering = false;
+    });
+  
+    let toastBarWidth = 100;
+  
+    const countdownInterval = setInterval(() => {
+      if (hovering) currentTimeout = remainingTimeout;
+      else {
+        toastBarWidth -= 2;
+        toastBar.style.width = `${toastBarWidth}%`;
+        remainingTimeout -= interval;
+
+        if (remainingTimeout <= 0) {
+          clearInterval(countdownInterval);    
+          toast.remove();
+        }
+      }
+    }, interval);
+  
+    return toast;
+  };
+
   const handleContact = (e: any) => {
     e.preventDefault();
 
-    const name = e.target.name.value;
-    const email = e.target.email.value;
-    const phone = e.target.phone.phone;
-    const subject = e.target.subject.value;
-    const message = e.target.message.value;
+    const target = e.target;
+    const toastsDiv = document.querySelector(".toasts") as HTMLDivElement;
 
     fetch("/api/contact", {
       method: "POST",
       body: JSON.stringify({
-        name: name,
-        email: email,
-        phone: phone,
-        subject: subject,
-        message: message
+        name: target.name.value,
+        email: target.email.value,
+        phone: target.phone.phone,
+        subject: target.subject.value,
+        message: target.message.value
       })
     })
       .then(res => res.json())
       .then(data => {
-        if (data.message === "Email sent successfully") {
-          alert("Message envoyé avec succès!");
-          e.target.reset();
-        }
-        else alert("Erreur lors de l'envoi du message");
+        target.reset();
+        toastsDiv.appendChild(createToast({ type: data.message === "Email sent successfully" ? "success" : "error" }));
       });
   }
 
@@ -35,6 +82,7 @@ export default function Contact() {
       <main>
         <NavBar />
         <section className="contact">
+          <div className="toasts"></div>
           <h1>Contact</h1>
 
           <p>Vous pouvez me contacter par mail à l&apos;adresse suivante: <a href="mailto:valdesign.dev@gmail.com" target="_blank" rel="noreferrer">valdesign.dev@gmail.com</a></p>

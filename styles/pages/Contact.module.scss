@@ -46,6 +46,66 @@
     }
   }
 
+  .toasts {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    z-index: 1000;
+
+    .toast {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      max-width: 500px;
+      margin: 0 auto;
+      position: relative;
+      background: rgba(0, 0, 0, 0.2);
+      border-radius: 0.5rem;
+      padding: 1rem;
+      margin-bottom: 1rem;
+      transition: all 0.3s ease-in-out;
+
+      p {
+        font-size: 1.5rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .close-toast {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        font-size: 1.5rem;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+        background: transparent;
+        border: none;
+        outline: none;
+
+        &:hover {
+          color: $red;
+        }
+      }
+
+      .toast-bar {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: 3px;
+        background: $link;
+        transition: all 0.3s ease-in-out;
+      }
+    }
+  }
+
   .form {
     display: flex;
     flex-direction: column;

@@ -27,16 +27,11 @@ export default function Contact() {
     toastBar.classList.add("toast-bar");
     toast.appendChild(toastBar);
   
-    toast.addEventListener("mouseenter", () => {
-      hovering = true;
-    });
+    toast.addEventListener("mouseenter", () => hovering = true);
   
-    toast.addEventListener("mouseleave", () => {
-      hovering = false;
-    });
+    toast.addEventListener("mouseleave", () => hovering = false);
   
     let toastBarWidth = 100;
-  
     const countdownInterval = setInterval(() => {
       if (hovering) currentTimeout = remainingTimeout;
       else {

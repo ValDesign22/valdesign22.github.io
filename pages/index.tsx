@@ -1,26 +1,15 @@
 import Link from "next/link";
 import NavBar from "../components/NavBar";
 
-// The text: 
-/*
-Bienvenue sur mon site Web
-
-Je vous propose mes compétences de webdesigner afin de réaliser vos sites internet sur-mesure en accord avec vos objectifs et les tendances du webdesign.
-Les projets que je réalise sont consultables sur les différents périphériques ciblés ordinateurs, mobiles et tablettes (également appelés sites RESPONSIVE)
-
-Qui suis-je :
-je m'appelle Valentin, j'ai 16 ans et je suis passionné de nouvelles technologies et particulièrement de codage (NodeJS, C+, JAVA ...)  depuis mon plus jeune âge.
-Ma particularité est d'être atteint d'un Trouble du Spectre Autistique, ce qui me m'impose d'être extrêmement exigeant avec des détails qui pourraient paraître insignifiant pour la plupart des personnes et ainsi de toujours cherche la "perfection" qui, on le sait tous, n'est pourtant pas de ce monde !
-vous trouverez dans l'onglet "RÉFÉRENCES" mes réalisations de sites, programmes ou logos pour des personnes m'ayant donné la chance de prouver mes talents
-
-Comment je travaille ?
-- mes parents m'accompagnent dans les démarches commerciales et m'aide à centrer mes priorités sur mes études afin de pouvoir plus tard vivre de ma passion
-- suite à un premier contact et à la définition de vos besoins, je vous propose un devis de réalisation allant jusqu'à la mise en ligne
-
-n'hésitez pas à me contacter et me faire part de vos demandes, auxquelles je répondrai avec plaisir, sur l'onglet "CONTACT"
-*/
-
 export default function Home() {
+  const age = () => {
+    const birthDate = new Date(2007, 1, 27);
+    const today = new Date();
+    let age = today.getFullYear() - birthDate.getFullYear();
+    const m = today.getMonth() - birthDate.getMonth();
+    if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) age--;
+    return age;
+  }
   return (
     <>
       <main>
@@ -33,7 +22,7 @@ export default function Home() {
         </section>
         <section className="whoami">
           <h2>Qui suis-je ?</h2>
-          <p>Je m&apos;appelle Valentin, j&apos;ai 16 ans et je suis passionné de nouvelles technologies et particulièrement de programmations (NodeJS, C#, Java...) depuis mon plus jeune âge.</p>
+          <p>Je m&apos;appelle Valentin, j&apos;ai {age()} ans et je suis passionné de nouvelles technologies et particulièrement de programmations (NodeJS, C#, Java...) depuis mon plus jeune âge.</p>
 
           <p>Vous trouverez dans la page <Link href="/projects">projets</Link> mes réalisations de sites ou logos pour des personnes m&apos;ayant donné la chance de prouver mes talents</p>
         </section>

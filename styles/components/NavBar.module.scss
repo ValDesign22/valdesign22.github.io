@@ -38,11 +38,14 @@
 
       @media screen and (max-width: 768px) {
         position: fixed;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+        background: $background-fade;
+        backdrop-filter: blur(5px);
+        translate: 0;
 
         &:not(.open) {
           display: flex;
-          transform: translateX(100%);
+          translate: 100%;
 
           .link {
             display: none;
@@ -56,9 +59,8 @@
           justify-content: center;
           top: 4rem;
           right: 0;
-          background-color: rgba(0, 0, 0, 0.5);
           width: calc(100vw - 6rem);
-          height: auto;
+          height: calc(100vh - 8rem);
           z-index: 1;
           border-radius: 1rem;
 
@@ -139,6 +141,7 @@
 
         span:nth-child(2) {
           opacity: 0;
+          scale: 1 0;
         }
 
         span:nth-child(3) {

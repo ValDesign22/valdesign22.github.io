@@ -1,6 +1,6 @@
 import {useEffect, useState} from "react";
 
-export default function ImageStyled(props: { src: string, alt: string, className?: string, id?: string }) {
+export default function ImageStyled(props: { src: string, alt: string, className?: string, id?: string, style?: any }) {
     const [loaded, setLoaded] = useState(false);
 
     useEffect(() => {
@@ -12,5 +12,6 @@ export default function ImageStyled(props: { src: string, alt: string, className
         }
     }, [props.id]);
 
-    return <img src={props.src} alt={props.alt} className={`image ${props.className || ""} ${loaded ? "" : "skeleton"}`} id={props.id} draggable={false} />
+    // eslint-disable-next-line @next/next/no-img-element
+    return <img src={props.src} alt={props.alt} className={`image ${props.className || ""} ${loaded ? "" : "skeleton"}`} id={props.id} draggable={false} style={props.style} />
 }

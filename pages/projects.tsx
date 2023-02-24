@@ -6,19 +6,79 @@ import {SiTypescript, SiReact} from "react-icons/si";
 import {IoLogoSass, IoLogoPython} from "react-icons/io";
 import {AiFillGithub, AiOutlineLink} from "react-icons/ai";
 import {TbBrandNextjs} from "react-icons/tb";
+import {RxCaretLeft, RxDotFilled, RxDot, RxCaretRight} from "react-icons/rx";
+import {useState} from "react";
 
 export default function Projects() {
+  const [currentImage, setCurrentImage] = useState(0);
+  const [currentProject, setCurrentProject] = useState(0);
+
+  const nextImage = (project: { name: string; carouselImages: { src: string; alt: string; }[]; }) => {
+    setCurrentProject(projects.findIndex((p) => p.name === project.name));
+    setCurrentImage((currentImage + 1) % project.carouselImages.length);
+  };
+  const prevImage = (project: { name: string; carouselImages: { src: string; alt: string; }[]; }) => {
+    setCurrentProject(projects.findIndex((p) => p.name === project.name));
+    setCurrentImage(
+      currentImage === 0 ? project.carouselImages.length - 1 : currentImage - 1
+    );
+  };
+  const toImage = (project: { name: string; }, index: number) => {
+    setCurrentProject(projects.findIndex((p) => p.name === project.name));
+    setCurrentImage(index);
+  }
+
   return (
     <>
       <main>
         <NavBar />
         <section className="projects">
-          <h1>Projets</h1>
+          <h1>Mes réalisations</h1>
 
           <div className="list">
             {projects.map((project, index) => (
               <div className="project" key={index}>
-                {project.image && <ImageStyled src={project.image} alt={project.name} id={project.name} />}
+
+                {project.carouselImages && <div className="carousel">
+                  <div className="images">
+                    {currentProject === index ?
+                      project.carouselImages.map((image, index) => (
+                        <>
+                          <ImageStyled
+                            src={image.src}
+                            alt={image.alt}
+                            id={project.name}
+                            key={index}
+                            style={{
+                              display: index === currentImage ? "block" : "none",
+                            }}
+                          />
+                          {index === currentImage && <span>{image.alt}</span>}
+                        </>
+                      )) : <>
+                        <ImageStyled
+                          src={project.image}
+                          alt={project.name}
+                          id={project.name}
+                          key={0}
+                          style={{
+                            display: "block",
+                          }}
+                        />
+                        <span>{project.name}</span>
+                      </>
+                    }
+                  </div>
+                  <div className="svgs">
+                    <RxCaretLeft onClick={() => prevImage(project)} />
+                    <div className="dots">
+                      {project.carouselImages.map((image, index) => (
+                        index === currentImage ? <RxDotFilled key={index} onClick={() => toImage(project, index)} /> : <RxDot key={index} onClick={() => toImage(project, index)} />
+                      ))}
+                    </div>
+                    <RxCaretRight onClick={() => nextImage(project)} />
+                  </div>
+                </div>}
                 <h2>{project.name}</h2>
                 <p>{project.description.split("\n").map((item, key) => <span key={key}>{item}<br /></span>)}</p>
                 <div className="links">

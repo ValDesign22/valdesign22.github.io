@@ -7,11 +7,11 @@
                 "src": "/images/valdesign-portfolio.png",
                 "alt": "ValDesign"
             }, {
-                "src": "/images/yopbotlist.png",
-                "alt": "YopBotList"
+                "src": "/images/valdesign-portfolio-reals.png",
+                "alt": "ValDesign - Réalisations"
             }, {
-                "src": "/images/espritdemeute.png",
-                "alt": "Esprit de Meute"
+                "src": "/images/valdesign-portfolio-contact.png",
+                "alt": "ValDesign - Contact"
             }
         ],
         "repo": "https://github.com/ValDesign22/valdesign22.github.io",
@@ -25,6 +25,12 @@
             {
                 "src": "/images/yopbotlist.png",
                 "alt": "YopBotList"
+            }, {
+                "src": "/images/yopbotlist-bots.png",
+                "alt": "YopBotList - Bots"
+            }, {
+                "src": "/images/yopbotlist-bot.png",
+                "alt": "YopBotList - Bot"
             }
         ],
         "repo": "https://github.com/Yop-BotList/YopBotList",

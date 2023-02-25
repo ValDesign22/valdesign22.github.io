@@ -49,9 +49,10 @@ export default function Projects() {
                             alt={image.alt}
                             id={project.name}
                             key={index}
-                            style={{
-                              display: index === currentImage ? "block" : "none",
-                            }}
+                            className={index === currentImage ?
+                              `active`
+                              : `inactive ${index > currentImage ? "next" : "prev"}`
+                            }
                           />
                           {index === currentImage && <span>{image.alt}</span>}
                         </>
@@ -70,13 +71,15 @@ export default function Projects() {
                     }
                   </div>
                   <div className="svgs">
-                    <RxCaretLeft onClick={() => prevImage(project)} />
+                    <RxCaretLeft onClick={() => prevImage(project)} className="left" />
                     <div className="dots">
                       {project.carouselImages.map((image, index) => (
-                        index === currentImage ? <RxDotFilled key={index} onClick={() => toImage(project, index)} /> : <RxDot key={index} onClick={() => toImage(project, index)} />
+                        index === currentImage ?
+                          <RxDotFilled key={index} onClick={() => toImage(project, index)} className={"dot"} /> :
+                          <RxDot key={index} onClick={() => toImage(project, index)} className={"dot"} />
                       ))}
                     </div>
-                    <RxCaretRight onClick={() => nextImage(project)} />
+                    <RxCaretRight onClick={() => nextImage(project)} className="right" />
                   </div>
                 </div>}
                 <h2>{project.name}</h2>

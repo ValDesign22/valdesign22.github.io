@@ -3,7 +3,7 @@ $main-light: rgb(0,106,255);
 $main-dark: rgb(7, 0, 121);
 $main-darkest: rgb(13, 14, 55);
 $darkest-rgba: rgba(13, 14, 55, 0.5);
-$background-fade: linear-gradient($darkest-rgba 80%, transparent);
+$background-fade: linear-gradient($darkest-rgba 80%, transparent 100%);
 
 $white: rgb(240,240,240);
 $black: rgb(40,40,40);

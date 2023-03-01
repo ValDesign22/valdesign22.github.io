@@ -69,18 +69,19 @@ export default function Projects() {
                         <span>{project.name}</span>
                       </>
                     }
-                  </div>
-                  <div className="svgs">
-                    <RxCaretLeft onClick={() => prevImage(project)} className="left" />
-                    <div className="dots">
-                      {project.carouselImages.map((image, index) => (
-                        index === currentImage ?
-                          <RxDotFilled key={index} onClick={() => toImage(project, index)} className={"dot"} /> :
-                          <RxDot key={index} onClick={() => toImage(project, index)} className={"dot"} />
-                      ))}
+                    <div className="svgs">
+                        <RxCaretLeft onClick={() => prevImage(project)} className="left" />
+                        <div className="dots">
+                          {project.carouselImages.map((image, index) => (
+                            index === currentImage ?
+                              <RxDotFilled key={index} onClick={() => toImage(project, index)} className={"dot"} /> :
+                              <RxDot key={index} onClick={() => toImage(project, index)} className={"dot"} />
+                          ))}
+                        </div>
+                        <RxCaretRight onClick={() => nextImage(project)} className="right" />
                     </div>
-                    <RxCaretRight onClick={() => nextImage(project)} className="right" />
                   </div>
+
                 </div>}
                 <h2>{project.name}</h2>
                 <p>{project.description.split("\n").map((item, key) => <span key={key}>{item}<br /></span>)}</p>

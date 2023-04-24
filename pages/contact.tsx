@@ -55,12 +55,22 @@ export default function Contact() {
     const target = e.target;
     const toastsDiv = document.querySelector(".toasts") as HTMLDivElement;
 
+    const stringed = JSON.stringify({
+      name: target.name.value,
+      email: target.email.value,
+      phone: target.phone.value,
+      subject: target.subject.value,
+      message: target.message.value
+    })
+
+    console.log(stringed);
+
     fetch("/api/contact", {
       method: "POST",
       body: JSON.stringify({
         name: target.name.value,
         email: target.email.value,
-        phone: target.phone.phone,
+        phone: target.phone.value,
         subject: target.subject.value,
         message: target.message.value
       })
@@ -68,7 +78,7 @@ export default function Contact() {
       .then(res => res.json())
       .then(data => {
         target.reset();
-        toastsDiv.appendChild(createToast({ type: data.message === "Email sent successfully" ? "success" : "error" }));
+        toastsDiv.appendChild(createToast({ type: data.message === "Email_sent_successfully" ? "success" : "error" }));
       });
   }
 

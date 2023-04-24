@@ -2,12 +2,12 @@ import NavBar from "../components/NavBar";
 import ImageStyled from "../components/ImageStyled";
 import projects from "../public/projects.json";
 
-import {SiTypescript, SiReact} from "react-icons/si";
-import {IoLogoSass, IoLogoPython} from "react-icons/io";
-import {AiFillGithub, AiOutlineLink} from "react-icons/ai";
-import {TbBrandNextjs} from "react-icons/tb";
-import {RxCaretLeft, RxDotFilled, RxDot, RxCaretRight} from "react-icons/rx";
 import {useState} from "react";
+import {AiFillGithub, AiOutlineLink} from "react-icons/ai";
+import {IoLogoSass, IoLogoPython} from "react-icons/io";
+import {RxCaretLeft, RxDotFilled, RxDot, RxCaretRight} from "react-icons/rx";
+import {SiTypescript, SiReact} from "react-icons/si";
+import {TbBrandNextjs} from "react-icons/tb";
 
 export default function Projects() {
   const [currentImage, setCurrentImage] = useState(0);

@@ -8,13 +8,18 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
   if (!name || !email || !subject || !message) return res.status(400).json({message: "Missing fields"});
 
-  const transporter = createTransport({
-    service: 'gmail',
-    auth: {
-      user: process.env.NODEMAILER_EMAIL,
-      pass: process.env.NODEMAILER_PASS
-    }
-  });
+  try {
+
+    const transporter = createTransport({
+      service: 'gmail',
+      auth: {
+        user: process.env.NODEMAILER_EMAIL,
+        pass: process.env.NODEMAILER_PASS
+      }
+    });
+  } catch(err) {
+    return res.json({error: err});
+  }
 
   transporter.sendMail({
     from: process.env.NODEMAILER_EMAIL,

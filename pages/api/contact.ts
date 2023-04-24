@@ -55,7 +55,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       </div>
     `
     }, (err, _info) => {
-      if (err) return res.status(500).json({message: "Email failed to send",error: err});
+      if (err) return res.json({message: "Email failed to send",error: err});
       res.status(200).json({message: "Email sent successfully"});
     });
 

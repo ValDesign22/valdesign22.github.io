@@ -21,17 +21,17 @@ export default function NavBar() {
 
                 <ul className={`links ${isOpen ? "open" : ""}`}>
                     <li className="link">
-                        <Link href="/">
+                        <Link href="/" onClick={() => setIsOpen(false)}>
                             <p>Accueil</p>
                         </Link>
                     </li>
                     <li className="link">
-                        <Link href="/projects">
+                        <Link href="/projects" onClick={() => setIsOpen(false)}>
                             <p>Réalisations</p>
                         </Link>
                     </li>
                     <li className="link">
-                        <Link href="/contact">
+                        <Link href="/contact" onClick={() => setIsOpen(false)}>
                             <p>Contact</p>
                         </Link>
                     </li>

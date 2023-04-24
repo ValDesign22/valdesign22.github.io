@@ -1,3 +1,4 @@
+import Carousel from "../components/Carousel";
 import NavBar from "../components/NavBar";
 import ImageStyled from "../components/ImageStyled";
 import projects from "../public/projects.json";
@@ -38,51 +39,7 @@ export default function Projects() {
           <div className="list">
             {projects.map((project, index) => (
               <div className="project" key={index}>
-
-                {project.carouselImages && <div className="carousel">
-                  <div className="images">
-                    {currentProject === index ?
-                      project.carouselImages.map((image, index) => (
-                        <>
-                          <ImageStyled
-                            src={image.src}
-                            alt={image.alt}
-                            id={project.name}
-                            key={index}
-                            className={index === currentImage ?
-                              `active`
-                              : `inactive ${index > currentImage ? "next" : "prev"}`
-                            }
-                          />
-                          {index === currentImage && <span>{image.alt}</span>}
-                        </>
-                      )) : <>
-                        <ImageStyled
-                          src={project.image}
-                          alt={project.name}
-                          id={project.name}
-                          key={0}
-                          style={{
-                            display: "block",
-                          }}
-                        />
-                        <span>{project.name}</span>
-                      </>
-                    }
-                    <div className="svgs">
-                        <RxCaretLeft onClick={() => prevImage(project)} className="left" />
-                        <div className="dots">
-                          {project.carouselImages.map((image, index) => (
-                            index === currentImage ?
-                              <RxDotFilled key={index} onClick={() => toImage(project, index)} className={"dot"} /> :
-                              <RxDot key={index} onClick={() => toImage(project, index)} className={"dot"} />
-                          ))}
-                        </div>
-                        <RxCaretRight onClick={() => nextImage(project)} className="right" />
-                    </div>
-                  </div>
-
-                </div>}
+                <Carousel projectIndex={index} key={index} />
                 <h2>{project.name}</h2>
                 <p>{project.description.split("\n").map((item, key) => <span key={key}>{item}<br /></span>)}</p>
                 <div className="links">

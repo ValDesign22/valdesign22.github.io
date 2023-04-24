@@ -47,7 +47,7 @@
             }
         ],
         "url": "https://espritdemeute.fr",
-        "description": "Esprit de Meute est un site web que j'ai créé pour une association d'éducation canine.\nJ'ai créé ce site web afin de présenter l'association et ses activités.\nC'est aussi le premier site web que j'ai créé.",
+        "description": "Esprit de Meute est un site web que j'ai créé pour une association d'éducation canine.\nJ'ai créé ce site web afin de présenter l'association et ses activités.",
         "tech": ["SCSS", "React", "TypeScript"]
     }, {
         "name": "Rubik's Cube Solver",

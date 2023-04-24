@@ -33,8 +33,7 @@
       align-items: center;
       list-style: none;
       margin-right: 2rem;
-      transition: all 0.3s ease;
-      transform: translateX(0);
+      transition: all 0.3s ease-in-out;
 
       @media screen and (max-width: 768px) {
         position: fixed;
@@ -42,6 +41,7 @@
         background: $background-fade;
         backdrop-filter: blur(5px);
         translate: 0;
+        z-index: 1000;
 
         &:not(.open) {
           display: flex;
@@ -59,9 +59,8 @@
           justify-content: center;
           top: 4rem;
           right: 0;
-          width: calc(100vw - 6rem);
-          height: calc(100vh - 8rem);
-          z-index: 100;
+          width: calc(95vw - 2rem);
+          height: calc(95vh - 4rem);
           border-radius: 1rem;
 
           .link {
@@ -115,10 +114,6 @@
       right: 1.5rem;
 
       @media (max-width: 768px) {
-        display: flex;
-      }
-
-      @media (max-width: 400px) {
         display: flex;
         height: 1.5rem;
         width: 1.5rem;

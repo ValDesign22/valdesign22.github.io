@@ -8,11 +8,10 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
   if (!name || !email || !subject || !message) return res.status(400).json({message: "Missing fields"});
   if (!email.includes("@")) return res.status(400).json({message: "Invalid email"});
-  if (phone && phone.length < 10) return res.status(400).json({message: "Invalid phone number"});
+  if (phone && (phone.length < 10 || phone.length > 20)) return res.status(400).json({message: "Invalid phone number"});
   if (subject.length > 100) return res.status(400).json({message: "Subject too long"});
   if (message.length > 1000) return res.status(400).json({message: "Message too long"});
   if (name.length > 100) return res.status(400).json({message: "Name too long"});
-  if (phone && phone.length > 20) return res.status(400).json({message: "Phone number too long"});
   if (email.length > 100) return res.status(400).json({message: "Email too long"});
 
   const transporter = createTransport({

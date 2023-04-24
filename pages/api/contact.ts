@@ -4,8 +4,6 @@ import {createTransport} from "nodemailer";
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method !== "POST") return res.status(405).end();
 
-  console.log(typeof req.body)
-
   const {name, email, phone, subject, message} = typeof req.body === "string" ? JSON.parse(req.body) : req.body;
 
   if (!name || !email || !subject || !message) return res.status(400).json({message: "Missing fields"});

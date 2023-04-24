@@ -86,7 +86,7 @@ export default function Contact() {
           <div className="form">
             <h2>Formulaire de contact</h2>
 
-            <form onSubmit={handleContact} netlify>
+            <form onSubmit={handleContact}>
               <div className="up-part">
                 <div className="input">
                   <label htmlFor="name">Nom<span className="required">*</span></label>

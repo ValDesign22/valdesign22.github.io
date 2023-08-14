@@ -32,7 +32,7 @@
       display: block;
       width: 0;
       height: 2px;
-      background: $link;
+      background: var(--link);
       transition: all 0.3s;
       position: absolute;
       bottom: 0;
@@ -41,10 +41,10 @@
     }
 
     &:hover {
-      color: $link-hover;
+      color: var(--link-hover);
 
       &::after {
-        background: $link-hover;
+        background: var(--link-hover);
         width: 100%;
         transition: all 0.3s;
       }

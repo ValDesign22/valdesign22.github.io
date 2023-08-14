@@ -9,7 +9,7 @@
     .logo {
       font-size: 2rem;
       font-weight: 700;
-      color: $white;
+      color: var(--white);
       text-decoration: none;
       display: flex;
       align-items: center;
@@ -38,7 +38,7 @@
       @media screen and (max-width: 768px) {
         position: fixed;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
-        background: $background-fade;
+        background: var(--background-fade);
         backdrop-filter: blur(5px);
         translate: 0;
         z-index: 1000;
@@ -67,7 +67,7 @@
             margin: 1rem 0;
             font-size: 2rem;
             font-weight: 500;
-            color: $white;
+            color: var(--white);
             text-decoration: none;
             text-align: center;
           }
@@ -78,7 +78,7 @@
         margin: 0 1rem;
         font-size: 1.5rem;
         font-weight: 500;
-        color: $white;
+        color: var(--white);
         text-decoration: none;
         position: relative;
 
@@ -87,7 +87,7 @@
           display: block;
           width: 0;
           height: 2px;
-          background: $link;
+          background: var(--link);
           transition: all 0.2s ease-in-out;
           position: absolute;
           bottom: -0.2rem;
@@ -95,7 +95,7 @@
           border-radius: 0.5rem;
         }
 
-        &:hover {
+        &:hover, &.active {
           &::after {
             width: 100%;
           }
@@ -124,7 +124,7 @@
         width: 25px;
         height: 3px;
         border-radius: 10px;
-        background: $white;
+        background: var(--white);
         margin: 2px;
         transition: all 0.3s ease-in-out;
       }

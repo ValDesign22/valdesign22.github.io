@@ -51,8 +51,16 @@
         "tech": ["SCSS", "React", "TypeScript"]
     }, {
         "name": "Rubik's Cube Solver",
+        "image": "/images/rubik-s-solver.png",
         "repo": "https://github.com/ValDesign22/Rubik-s-Solver",
         "description": "Rubik's Cube Solver est un programme qui permet de résoudre un Rubik's Cube.\nJ'ai créé ce programme afin de résoudre un Rubik's Cube en utilisant les Lego Mindstorms.",
         "tech": ["Python"]
+    }, {
+        "name": "Discord Analytics",
+        "image": "/images/discordanalytics.png",
+        "repo": "https://github.com/DiscordAnalytics",
+        "url": "https://discordanalytics.xyz",
+        "description": "Discord Analytics est un outil permettant au développeur de bot discord de voir les statistiques de leur bot.\nLes statistiques sont affichées sous forme de graphique et en temps réel.",
+        "tech": ["Vue.js", "SCSS", "TypeScript", "Node.js", "Express.js", "Prisma", "MariaDB"]
     }
 ]

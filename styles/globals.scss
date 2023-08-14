@@ -1,23 +1,44 @@
-$main: rgb(29, 29, 197);
-$main-light: rgb(0,106,255);
-$main-dark: rgb(7, 0, 121);
-$main-darkest: rgb(13, 14, 55);
-$darkest-rgba: rgba(13, 14, 55, 0.5);
-$background-fade: linear-gradient($darkest-rgba 80%, transparent 100%);
+:root {
+  --main: rgb(29, 29, 197);
+  --main-light: rgb(0,106,255);
+  --main-dark: rgb(7, 0, 121);
+  --main-darkest: rgb(13, 14, 55);
+  --main-bg: rgb(20, 20, 20);
+  --darkest-rgba: rgba(13, 14, 55, 0.5);
+  --background-fade: linear-gradient(var(--darkest-rgba) 80%, transparent 100%);
 
-$white: rgb(240,240,240);
-$black: rgb(40,40,40);
+  --white: rgb(240,240,240);
+  --black: rgb(40,40,40);
 
-$link: rgb(230, 230, 230);
-$link-hover: rgb(169, 169, 243);
+  --link: rgb(230, 230, 230);
+  --link-hover: rgb(169, 169, 243);
 
-$red: rgb(255, 0, 0);
+  --red: rgb(255, 0, 0);
+}
+
+[data-theme="light"] {
+  --main: rgb(29, 29, 197);
+  --main-light: rgb(0,106,255);
+  --main-dark: rgb(7, 0, 121);
+  --main-darkest: rgb(123, 124, 201);
+  --main-bg: rgb(240,240,240);
+  --darkest-rgba: rgba(13, 14, 55, 0.5);
+  --background-fade: linear-gradient(var(--darkest-rgba) 80%, transparent 100%);
+
+  --white: rgb(40,40,40);
+  --black: rgb(240,240,240);
+
+  --link: rgb(40,40,40);
+  --link-hover: rgb(169, 169, 243);
+
+  --red: rgb(255, 0, 0);
+}
 
 * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-  color: $white;
+  color: var(--white);
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
@@ -25,14 +46,14 @@ html,
 body {
   max-width: 100vw;
   height: 100%;
-  background: $main-darkest;
+  background: var(--main-bg);
 }
 
 a {
   text-decoration: none;
   transition: all 0.2s ease-in-out;
   cursor: pointer;
-  color: $link;
+  color: var(--link);
   position: relative;
 }
 

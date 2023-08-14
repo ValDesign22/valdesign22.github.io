@@ -1,9 +1,11 @@
 import Link from "next/link";
 import {useState} from "react";
 import ImageStyled from "./ImageStyled";
+import { useRouter } from "next/router";
 
 export default function NavBar() {
     const [isOpen, setIsOpen] = useState(false);
+    const currentPath = useRouter().pathname;
 
     return (
         <nav className="navbar">
@@ -20,17 +22,17 @@ export default function NavBar() {
                 </div>
 
                 <ul className={`links ${isOpen ? "open" : ""}`}>
-                    <li className="link">
+                    <li className={"link " + (currentPath === "/" ? "active" : "")}>
                         <Link href="/" onClick={() => setIsOpen(false)}>
                             <p>Accueil</p>
                         </Link>
                     </li>
-                    <li className="link">
+                    <li className={"link " + (currentPath === "/projects" ? "active" : "")}>
                         <Link href="/projects" onClick={() => setIsOpen(false)}>
                             <p>Réalisations</p>
                         </Link>
                     </li>
-                    <li className="link">
+                    <li className={"link " + (currentPath === "/contact" ? "active" : "")}>
                         <Link href="/contact" onClick={() => setIsOpen(false)}>
                             <p>Contact</p>
                         </Link>

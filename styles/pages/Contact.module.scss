@@ -27,7 +27,7 @@
       display: block;
       width: 0;
       height: 2px;
-      background: $link;
+      background: var(--link);
       transition: all 0.3s;
       position: absolute;
       bottom: 0;
@@ -36,10 +36,10 @@
     }
 
     &:hover {
-      color: $link-hover;
+      color: var(--link-hover);
 
         &::after {
-          background: $link-hover;
+          background: var(--link-hover);
           width: 100%;
           transition: all 0.3s;
         }
@@ -91,7 +91,7 @@
         outline: none;
 
         &:hover {
-          color: $red;
+          color: var(--red);
         }
       }
 
@@ -100,7 +100,7 @@
         bottom: 0;
         left: 0;
         height: 3px;
-        background: $link;
+        background: var(--link);
         transition: all 0.3s ease-in-out;
       }
     }
@@ -151,7 +151,7 @@
             margin-bottom: 0.5rem;
 
             .required {
-              color: $red;
+              color: var(--red);
               margin: 0 0.5rem;
             }
           }
@@ -162,14 +162,14 @@
             padding: 0.5rem;
             font-size: 1.5rem;
             border: none;
-            border-bottom: 2px solid $link;
+            border-bottom: 2px solid var(--link);
             background: transparent;
-            color: $white;
+            color: var(--white);
             transition: all 0.3s ease-in-out;
 
             &:focus {
               outline: none;
-              border-bottom: 2px solid $link-hover;
+              border-bottom: 2px solid var(--link-hover);
               background: rgba(0, 0, 0, 0.2);
               border-radius: 0.5rem;
             }
@@ -181,7 +181,7 @@
             }
 
             &:not(:empty):invalid {
-              border-bottom: 2px solid $red;
+              border-bottom: 2px solid var(--red);
             }
           }
 
@@ -193,9 +193,9 @@
             padding: 0.5rem;
             margin: 0.5rem 0;
             border: none;
-            border-bottom: 2px solid $link;
+            border-bottom: 2px solid var(--link);
             background: transparent;
-            color: $white;
+            color: var(--white);
             transition: border-radius 0.3s ease-in-out,
                 background 0.3s ease-in-out,
                 border-bottom 0.3s ease-in-out;
@@ -203,7 +203,7 @@
             &:focus {
               outline: none;
               height: auto;
-              border-bottom: 2px solid $link-hover;
+              border-bottom: 2px solid var(--link-hover);
               background: rgba(0, 0, 0, 0.2);
               border-radius: 0.5rem;
             }
@@ -211,13 +211,13 @@
             &:hover {
               outline: none;
               height: auto;
-              border-bottom: 2px solid $link-hover;
+              border-bottom: 2px solid var(--link-hover);
               background: rgba(0, 0, 0, 0.1);
               border-radius: 0.5rem;
             }
 
             &:not(:empty):invalid {
-              border-bottom: 2px solid $red;
+              border-bottom: 2px solid var(--red);
             }
           }
         }
@@ -243,9 +243,9 @@
           background: rgba(0, 0, 0, 0.2);
           border-radius: 0.5rem;
           outline: none;
-          color: $white;
+          color: var(--white);
           font-size: 1.5rem;
-          border: 2px solid $link;
+          border: 2px solid var(--link);
           transition: all 0.3s ease-in-out;
           text-transform: uppercase;
           cursor: pointer;
@@ -253,13 +253,13 @@
 
           &:hover {
             background: rgba(0, 0, 0, 0.4);
-            border: 2px solid $link-hover;
+            border: 2px solid var(--link-hover);
           }
 
           &:focus {
-            background: $white;
-            color: $black;
-            border: 2px solid $link-hover;
+            background: var(--white);
+            color: var(--black);
+            border: 2px solid var(--link-hover);
           }
         }
       }

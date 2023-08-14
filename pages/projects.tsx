@@ -78,12 +78,16 @@ export default function Projects() {
                   <h3>Liens</h3>
 
                   <div className="inner">
-                    <a href={project.repo} target="_blank" rel="noopener noreferrer">
-                      <AiFillGithub />
-                    </a>
-                    <a href={project.url} target="_blank" rel="noopener noreferrer">
-                      <AiOutlineLink />
-                    </a>
+                    {project.repo &&
+                      <a href={project.repo} target="_blank" rel="noopener noreferrer">
+                        <AiFillGithub />
+                      </a>
+                    }
+                    {project.url &&
+                      <a href={project.url} target="_blank" rel="noopener noreferrer">
+                        <AiOutlineLink />
+                      </a>
+                    }
                   </div>
                 </div>
               </div>

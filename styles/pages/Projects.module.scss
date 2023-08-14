@@ -6,7 +6,7 @@
   height: 100%;
   width: 100%;
   padding: 0 1rem;
-  margin-bottom: 5rem;
+  margin-bottom: 7rem;
 
   h1 {
     font-size: 2rem;
@@ -16,9 +16,10 @@
 
   .list {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(3, minmax(300px, 1fr));
     grid-gap: 1rem;
     width: 100%;
+    margin-bottom: 5rem;
 
     .project {
       display: flex;
@@ -28,16 +29,18 @@
       height: 100%;
       width: 100%;
       border-radius: 0.5rem;
-      background-color: $main-darkest;
-      box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.5);
+      background-color: var(--main-darkest);
+      box-shadow:
+        0 0 0.5rem rgba(0, 0, 0, 0.5),
+        inset 0 0 0.5rem rgba(0, 0, 0, 0.5);
       padding-bottom: 1rem;
+      transition: scale 0.2s ease-in-out;
 
       img {
         height: 100%;
         width: 100%;
         border-radius: 0.5rem;
         object-fit: cover;
-        position: relative;
       }
 
       .textarea {
@@ -88,21 +91,31 @@
             width: 2rem;
             margin: 0 0.5rem;
             border-radius: 50%;
-            background-color: $main-darkest;
-            transition: all 0.2s ease-in-out;
+            background-color: var(--main-darkest);
+            transition: scale 0.2s ease-in-out;
   
             &:hover {
-              transform: scale(1.05);
+              scale: 1.1;
             }
   
             svg {
               height: 1.5rem;
               width: 1.5rem;
-              fill: $white;
+              fill: var(--white);
             }
           }
         }
       }
+
+      &:hover {
+        scale: 1.02;
+      }
+    }
+  }
+
+  @media only screen and (max-width: 1024px) {
+    .list {
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     }
   }
 }

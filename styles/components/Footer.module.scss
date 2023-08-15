@@ -107,6 +107,10 @@ footer {
           white-space: nowrap;
           transition: all 0.3s ease-in-out;
 
+          [data-theme="light"] & {
+            color: var(--black);
+          }
+
           &::after {
             content: "";
             position: absolute;

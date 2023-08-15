@@ -108,6 +108,16 @@ export default function Projects() {
                         </>
                       )
                     ))}
+                    {project.tech.length > 4 &&
+                      <span className="more">
+                        +{project.tech.length - 4}
+                        <p className="tooltip">
+                          {project.tech.slice(4).map((tech, index) => (
+                            <span key={index}>{tech}<br /></span>
+                          ))}
+                        </p>
+                      </span>
+                    }
                   </div>
                 </div>
               </div>

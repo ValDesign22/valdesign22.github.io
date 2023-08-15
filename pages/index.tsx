@@ -24,7 +24,7 @@ export default function Home() {
           <h2>Qui suis-je ?</h2>
           <p>Je m&apos;appelle Valentin, j&apos;ai {age()} ans et je suis passionné de nouvelles technologies et particulièrement de programmations (NodeJS, C#, Java...) depuis mon plus jeune âge.</p>
 
-          <p>Vous trouverez dans la page <Link href="/projects">projets</Link> mes réalisations de sites ou logos pour des personnes m&apos;ayant donné la chance de prouver mes talents</p>
+          <p>Vous trouverez dans la page <Link href="/projects">projets</Link> mes réalisations des sites ou logos pour des personnes m&apos;ayant donné la chance de prouver mes talents</p>
         </section>
         <section className="how">
           <h2>Comment je travaille ?</h2>

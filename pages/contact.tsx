@@ -87,13 +87,18 @@ export default function Contact() {
       <main>
         <NavBar />
         <section className="contact">
-          <div className="toasts"></div>
+          {/* <div className="toasts"></div> */}
           <h1>Contact</h1>
 
-          <p>Vous pouvez me contacter par mail à l&apos;adresse suivante: <a href="mailto:valdesign.dev@gmail.com" target="_blank" rel="noreferrer">valdesign.dev@gmail.com</a></p>
-          <p>Ou par le formulaire de contact ci-dessous:</p>
+          <p>
+            Vous pouvez me contacter par mail à l&apos;adresse suivante :
+            <a href="mailto:valdesign.dev@gmail.com" target="_blank" rel="noreferrer">
+              valdesign.dev@gmail.com
+            </a>
+          </p>
+          {/* <p>Ou par le formulaire de contact ci-dessous:</p> */}
 
-          <div className="form">
+          {/* <div className="form">
             <h2>Formulaire de contact</h2>
 
             <form onSubmit={handleContact}>
@@ -128,7 +133,7 @@ export default function Contact() {
                 <button type="submit">Envoyer</button>
               </div>
             </form>
-          </div>
+          </div> */}
         </section>
       </main>
     </>

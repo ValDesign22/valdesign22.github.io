@@ -3,7 +3,7 @@ import Footer from "../components/Footer";
 import {Analytics} from "@vercel/analytics/react";
 import type {AppProps} from 'next/app';
 import Head from "next/head";
-import Script from "next/script";
+import Script from 'next/script';
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
@@ -31,17 +31,15 @@ export default function App({ Component, pageProps }: AppProps) {
 
         <meta name="google-site-verification" content={process.env.GOOGLE_SITE_VERIFICATION} />
       </Head>
-      <Script
-        src="https://www.googletagmanager.com/gtag/js?id=G-GXR6YY1VHD"
-        strategy="afterInteractive"
-      />
-      <Script id="google-analytics" strategy="afterInteractive">
+      {/* Google tag (gtag.js) */}
+      <Script src="https://www.googletagmanager.com/gtag/js?id=G-2VT1NMKWG7" />
+      <Script id="google-analytics">
         {`
           window.dataLayer = window.dataLayer || [];
-          function gtag(){window.dataLayer.push(arguments);}
+          function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
-
-          gtag('config', 'G-GXR6YY1VHD');
+ 
+          gtag('config', 'G-2VT1NMKWG7');
         `}
       </Script>
       <Component {...pageProps} />

@@ -49,6 +49,10 @@ body {
   background: var(--main-bg);
 }
 
+main {
+  padding-bottom: 2rem;
+}
+
 a {
   text-decoration: none;
   transition: all 0.2s ease-in-out;

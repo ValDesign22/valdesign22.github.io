@@ -36,12 +36,12 @@ export default function Projects() {
 
                   <div className="inner">
                     {project.repo &&
-                      <a href={project.repo} target="_blank" rel="noopener noreferrer">
+                      <a href={project.repo} target="_blank" rel="noopener noreferrer" key={"repolink"}>
                         <AiFillGithub />
                       </a>
                     }
                     {project.url &&
-                      <a href={project.url} target="_blank" rel="noopener noreferrer">
+                      <a href={project.url} target="_blank" rel="noopener noreferrer" key={"urllink"}>
                         <AiOutlineLink />
                       </a>
                     }

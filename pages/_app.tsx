@@ -4,12 +4,21 @@ import {Analytics} from "@vercel/analytics/react";
 import type {AppProps} from 'next/app';
 import Head from "next/head";
 import Script from 'next/script';
+import { useRouter } from 'next/router';
 
 export default function App({ Component, pageProps }: AppProps) {
+  const router = useRouter();
+  const route = router.asPath;
+  const nameToString = {
+    "/": "Accueil",
+    "/projects": "Projets",
+    "/contact": "Contact",
+  }[route];
+
   return (
     <>
       <Head>
-        <title>ValDesign</title>
+        <title>ValDesign - {nameToString}</title>
         <meta name="description" content="Portfolio de ValDesign, développeur web, proposition de services" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta charSet={"utf-8"} />

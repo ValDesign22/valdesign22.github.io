@@ -1,3 +1,4 @@
 # Allow all crawlers to index the site
 User-agent: *
 Allow: /
+Sitemap: http://valdesign.me/sitemap.xml
